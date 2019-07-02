@@ -1,0 +1,31 @@
+<%-- any content can be specified here e.g.: --%>
+<%@page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
+<%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/filmOrder.css" type="text/css">
+        <script type="text/javascript" src="js/filmOrder.js"></script>
+    </head>
+    <body>
+        <div id="userActivityDiv">
+                    <c:if test="${user==null}">
+                        <a href="${pageContext.request.contextPath}/register.jsp"><bean:message key="welcome.register" /></a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="${pageContext.request.contextPath}/login.jsp"><bean:message key="welcome.login" /></a>
+                    </c:if>
+                    <c:if test="${user!=null}">
+                        欢迎您！<a href="${pageContext.request.contextPath}/me.jsp">${user.buyerName}</a>&nbsp;&nbsp;&nbsp;
+                        <input type="button" value="退出登录" onclick="doLogout()">
+                    </c:if>
+                </div>
+        <hr id="headerHr"/>
+        <div id="headerLogo">
+                <a href="${pageContext.request.contextPath}/index.jsp" id="logo">
+                    <img src="${pageContext.request.contextPath}/img/filmOrder.png" alt="filmOrder logo" >
+                </a>
+            </div>
+                    <div id="content">

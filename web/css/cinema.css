@@ -1,0 +1,19 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 12, 2019, 1:30:56 PM
+    Author     : tellw
+*/
+table {
+    margin: 0 20px;
+    border-spacing: 0;
+    text-align: center;
+    border: solid 3px #f5eabe;
+}
+
+.strutsTable {
+    margin: 0 auto;
+}

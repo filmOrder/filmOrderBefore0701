@@ -1,0 +1,275 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 23, 2019, 12:59:13 PM
+    Author     : tellw
+*/
+.errorTd{
+    border-bottom-style: none;
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+}
+
+body {
+    background-image: url('/filmOrder/img/all_bg.png');
+    text-align: center;
+    margin: 20px auto;
+    font-size: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+html{
+    height: 100%;
+}
+
+hr {
+    border: 1;
+    height: 1px;
+}
+
+br {
+    height: 1px;
+}
+
+#headerHr{
+    position: absolute;
+    top: 5%;
+    width: 100%;
+}
+
+table {
+    margin: 0 20px;
+    border-spacing: 0;
+    text-align: center;
+    border: solid 3px #f5eabe;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline
+}
+
+img {
+    border: none
+}
+
+input, select {
+    margin: 5px
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+}
+
+li {
+    margin: 10px 0
+}
+
+label {
+    line-height: 30px
+}
+
+.smallText {
+    font-size: small;
+}
+
+.reallySmallText {
+    font-size: xx-small;
+}
+
+#footer {
+/*    position: absolute;
+    bottom: 0;
+    width: 100%;
+    clear: both;
+    height: 50px;
+    margin-top: -50px;*/
+ position: fixed;
+    bottom: 0;
+    margin: 0 auto;
+}
+
+#footerText {
+    margin-top: 5px
+}
+
+#footerDivider {
+    margin: 0 auto 0;
+    width: 50%;
+}
+
+#logo {
+    position: relative;
+    right: 33%;
+    height: 100%;
+}
+
+#logoText {
+    positon:absolute;
+    left: 8%;
+    top: 7%;
+}
+
+#userActivityDiv {
+    position: absolute;
+    right: 10%;
+    top: 1%;
+}
+
+#headerLogo {
+/*    height: 75px;*/
+    position: absolute;
+    top: 5%;
+    width: 100%;
+}
+
+#headerUl{
+    color: black;
+}
+
+.ulA{
+    font-size: 22px;
+    margin: 0, 10px;
+}
+
+.ulA:active, .ulA:hover{
+    color: red;
+}
+
+#content{
+    position: absolute;
+    top: 9%;
+    width: 100%;
+    color: blue;
+}
+
+/*#moveHeader {
+    position: relative;
+    bottom: 12%;
+}*/
+
+.strutsFormDiv{
+    margin: 0 auto;
+}
+
+.strutsTable{
+    margin: 0 auto;
+}
+
+.messageFont{
+    text-align: center;
+    color: black;
+    font-size: 20px;
+}
+
+#notice {
+    position: relative;
+    top: 20%;
+    width: 40%;
+    margin:0 auto;
+    background-color: #bbb;
+}
+
+.ulHrIndex {
+    width: 50px;
+    height: 5px;
+    border: none;
+    border-top: 5px ridge red;
+    position: relative;
+    right: 80px;
+}
+
+.ulHrCinema {
+    width: 50px;
+    height: 5px;
+    border: none;
+    border-top: 5px ridge red;
+}
+
+.ulHrFilm {
+    width: 50px;
+    height: 5px;
+    border: none;
+    border-top: 5px ridge red;
+    position: relative;
+    left: 80px;
+}
+
+.ulHrAdminIndex {
+    width: 100px;
+    height: 5px;
+    border: none;
+    border-top: 5px ridge red;
+    position: relative;
+    right: 195px;
+}
+
+.ulHrAdminFilm {
+    width: 100px;
+    height: 5px;
+    border: none;
+    border-top: 5px ridge red;
+    position: relative;
+    right: 75px;
+}
+
+.ulHrAdminBuyer {
+    width: 100px;
+    height: 5px;
+    border: none;
+    border-top: 5px ridge red;
+    position: relative;
+    left: 65px;
+}
+
+.ulHrAdminCinema {
+    width: 100px;
+    height: 5px;
+    border: none;
+    border-top: 5px ridge red;
+    position: relative;
+    left: 195px;
+}
+
+#noticeContent {
+    text-align: left;
+    margin:1px 0;
+}
+
+#noticeTime {
+    float: right;
+    position: relative;
+}
+
+.showDiv {
+    background-color: #a69947;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.filmTd {
+    width: 150px;
+    height: 180px;
+    background-color: #ccc;
+}
+
+.filmTable {
+    position: relative;
+    left: 250px;
+}
+
+#filmCinemaInfo {
+     position: fixed;
+    top: 10%;
+    right: 5%;
+}

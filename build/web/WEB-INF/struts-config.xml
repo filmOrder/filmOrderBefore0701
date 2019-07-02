@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+
+<struts-config>
+    <form-beans>
+        <form-bean name="LoginForm" type="com.myapp.struts.LoginForm"/>
+        <form-bean name="CinemaRegisterForm" type="com.myapp.struts.CinemaRegisterForm"/>
+        <form-bean name="BuyerRegisterForm" type="com.myapp.struts.BuyerRegisterForm"/>
+        <form-bean name="noticeForm" type="notice.form.NoticeForm"></form-bean>
+        <form-bean name="filmForm" type="film.form.FilmForm"></form-bean>
+        <form-bean name="cinemaForm" type="user.form.CinemaForm"></form-bean>
+        <form-bean name="customForm" type="user.form.CustomForm"></form-bean>
+        <form-bean name="FilmTicketBuyForm" type="com.myapp.struts.FilmTicketBuyForm"/>
+        <form-bean name="BuyerMoneyAddForm" type="com.myapp.struts.BuyerMoneyAddForm"/>
+        <form-bean name="SearchCinemaAddrForm" type="com.myapp.struts.SearchCinemaAddrForm"/>
+        <form-bean name="SearchCinemaNameForm" type="com.myapp.struts.SearchCinemaNameForm"/>
+        <form-bean name="CommentPublishForm" type="com.myapp.struts.CommentPublishForm"/>
+        <form-bean name="SearchFilmNameForm" type="com.myapp.struts.SearchFilmNameForm"/>
+    
+    </form-beans>
+    
+    <global-exceptions>
+    
+    </global-exceptions>
+
+    <global-forwards>
+        <forward name="welcome"  path="/Welcome.do"/>
+    </global-forwards>
+
+    <action-mappings>
+        <action name="BuyerRegisterForm" path="/buyerRegister" scope="request" type="com.myapp.struts.BuyerRegisterAction" validate="false">
+            <forward name="buyerRegisterSuccess" path="/index.jsp"/>
+            <forward name="buyerRegisterFailure" path="/buyerRegister.jsp"/>
+        </action>
+        <action name="CinemaRegisterForm" path="/cinemaRegister" scope="request" type="com.myapp.struts.CinemaRegisterAction" validate="false">
+            <forward name="cinemaRegisterSuccess" path="/index.jsp"/>
+            <forward name="cinemaRegisterFailure" path="/cinemaRegister.jsp"/>
+        </action>
+        <action name="LoginForm" path="/login" scope="request" type="com.myapp.struts.LoginAction" validate="false">
+            <forward name="adminLoginSuccess" path="/admin_index.jsp" />
+            <forward name="buyerLoginSuccess" path="/index.jsp" />
+            <forward name="cinemaLoginSuccess" path="/cinema_index.jsp" />
+            <forward name="loginFailure" path="/login.jsp" />
+        </action>
+        <action path="/Welcome" forward="/welcomeStruts.jsp"/>
+        <!--    Notice    -->
+        <action path="/admin/addNotice" name="noticeForm" type="notice.action.AddNoticeAction" scope="request">
+            <forward name="error" path="/admin_error.jsp" />
+            <forward name="success" path="/admin_succ.jsp" />
+        </action>
+        <action path="/admin/deleteNotice" name="noticeForm" type="notice.action.DeleteNoticeAction" scope="request">
+            <forward name="error" path="/admin_error.jsp" />
+            <forward name="success" path="/admin_succ.jsp" />
+        </action>
+        <action path="/admin/getNotice" name="noticeForm" type="notice.action.GetNoticeAction" scope="request">
+            <forward name="error" path="/admin_error.jsp" />
+            <forward name="success" path="/admin_noticelist.jsp" />
+        </action>
+        <action path="/admin/updateNotice" name="noticeForm" type="notice.action.UpdateNoticeAction" scope="request">
+            <forward name="error" path="/admin_error.jsp" />
+            <forward name="success" path="/admin_succ.jsp" />
+        </action>
+        <!--    Film    -->
+        <action path="/admin/addFilm" name="filmForm" type="film.action.AddFilmAction" scope="request">
+            <forward name="error" path="/admin_error.jsp" />
+            <forward name="success" path="/admin_succ.jsp" />
+        </action>
+        <action path="/admin/deleteFilm" name="filmForm" type="film.action.DeleteFilmAction" scope="request">
+            <forward name="error" path="/admin_error.jsp" />
+            <forward name="success" path="/admin_succ.jsp" />
+        </action>
+        <action path="/admin/getFilm" name="filmForm" type="film.action.GetFilmAction" scope="request">
+            <forward name="error" path="/admin_error.jsp" />
+            <forward name="success" path="/admin_filmlist.jsp" />
+        </action>
+        <action path="/admin/updateFilm" name="filmForm" type="film.action.UpdateFilmAction" scope="request">
+            <forward name="error" path="/admin_error.jsp" />
+            <forward name="success" path="/admin_succ.jsp" />
+        </action>
+        <!--    Custom    -->
+        <action path="/admin/addCustom" name="customForm" type="user.action.AddCustomAction" scope="request"></action>
+        <action path="/admin/deleteCustom" name="customForm" type="user.action.DeleteCustomAction" scope="request">
+            <forward name="error" path="/admin_error.jsp" />
+            <forward name="success" path="/admin_succ.jsp" />
+        </action>
+        <action path="/admin/getCustom" name="customForm" type="user.action.GetCustomAction" scope="request">
+            <forward name="success" path="/admin_buyerlist.jsp" />
+        </action>
+        <action path="/admin/updateCustom" name="customForm" type="user.action.UpdateCustomAction" scope="request">
+            <forward name="error" path="/admin_error.jsp" />
+            <forward name="success" path="/admin_succ.jsp" />
+        </action>
+        <!--    Cinema    -->
+        <action path="/admin/addCinema" name="cinemaForm" type="user.action.AddCinemaAction" scope="request"></action>
+        <action path="/admin/deleteCinema" name="cinemaForm" type="user.action.DeleteCinemaAction" scope="request">
+            <forward name="error" path="/admin_error.jsp" />
+            <forward name="success" path="/admin_succ.jsp" />
+        </action>
+        <action path="/admin/getCinema" name="cinemaForm" type="user.action.GetCinemaAction" scope="request">
+            <forward name="success" path="/admin_cinemalist.jsp" />
+        </action>
+        <action path="/admin/updateCinema" name="cinemaForm" type="user.action.UpdateCinemaAction" scope="request">
+            <forward name="error" path="/admin_error.jsp" />
+            <forward name="success" path="/admin_succ.jsp" />
+        </action>
+        <action path="/logout" type="com.myapp.struts.LogoutAction">
+            <forward name="logoutSuccess" path="/index.jsp"></forward>
+        </action>
+        <action name="customForm" path="/admin/getAllCustom" scope="request" type="user.action.GetAllCustomAction">
+            <forward name="success" path="/admin_buyerlist.jsp" />
+        </action>
+        <action name="cinemaForm" path="/admin/getAllCinema" scope="request" type="user.action.GetAllCinemaAction">
+            <forward name="success" path="/admin_cinemalist.jsp" />
+        </action>
+        <action name="SearchFilmNameForm" path="/searchFilmName" scope="request" type="com.myapp.struts.SearchFilmNameAction" validate="false">
+            <forward name="success" path="/filmShow.jsp" />
+        </action>
+        <action path="/searchFilmAction" type="com.myapp.struts.SearchFilmAction">
+            <forward name="success" path="/filmShow.jsp" />
+        </action>
+        <action path="/searchFilmComedy" type="com.myapp.struts.SearchFilmComedy">
+            <forward name="success" path="/filmShow.jsp" />
+        </action>
+        <action path="/searchFilmLove" type="com.myapp.struts.SearchFilmLove">
+            <forward name="success" path="/filmShow.jsp" />
+        </action>
+        <action path="/searchFilmScience" type="com.myapp.struts.SearchFilmScience">
+            <forward name="success" path="/filmShow.jsp" />
+        </action>
+        <action path="/searchFilmBook" type="com.myapp.struts.SearchFilmBook">
+            <forward name="success" path="/filmShow.jsp" />
+        </action>
+        <action path="/searchFilmTerror" type="com.myapp.struts.SearchFilmTerror"> 
+            <forward name="success" path="/filmShow.jsp" />
+        </action>
+        <action path="/searchFilmWar" type="com.myapp.struts.SearchFilmWar">
+            <forward name="success" path="/filmShow.jsp" />
+        </action>
+        <action path="/searchFilmWill" type="com.myapp.struts.SearchFilmWillAction">
+            <forward name="success" path="/filmShow.jsp" />
+        </action>
+        <action path="/searchFilmOn" type="com.myapp.struts.SearchFilmOnAction">
+            <forward name="success" path="/filmShow.jsp" />
+        </action>
+        <action path="/cinemaLogout" type="com.myapp.struts.CinemaLogout">
+            <forward name="success" path="/message.jsp" />
+        </action>
+        <action name="CommentPublishForm" path="/commentPublish" scope="request" type="com.myapp.struts.CommentPublishAction" validate="false">
+            <forward name="success" path="/filmShow.jsp" />
+        </action>
+        <action name="SearchCinemaAddrForm" path="/searchCinemaAddr" scope="request" type="com.myapp.struts.SearchCinemaAddrAction" validate="false">
+            <forward name="success" path="/cinemaShow.jsp" />
+        </action>
+        <action name="SearchCinemaNameForm" path="/searchCinemaName" scope="request" type="com.myapp.struts.SearchCinemaNameAction" validate="false">
+            <forward name="success" path="/cinemaShow.jsp" />
+        </action>
+        <action name="BuyerMoneyAddForm" path="/buyerMoneyAdd" scope="request" type="com.myapp.struts.BuyerMoneyAddAction" validate="false">
+            <forward name="success" path="/me.jsp" />
+        </action>
+        <action name="FilmTicketBuyForm" path="/filmTicketBuy" scope="request" type="com.myapp.struts.FilmTicketBuyAction" validate="false">
+            <forward name="success" path="/buy.jsp" />
+        </action>
+    </action-mappings>
+    
+    <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+
+    <message-resources parameter="com/myapp/struts/ApplicationResource"/>    
+    
+    <!-- ========================= Tiles plugin ===============================-->
+    <!--
+    This plugin initialize Tiles definition factory. This later can takes some
+    parameters explained here after. The plugin first read parameters from
+    web.xml, thenoverload them with parameters defined here. All parameters
+    are optional.
+    The plugin should be declared in each struts-config file.
+    - definitions-config: (optional)
+    Specify configuration file names. There can be several comma
+    separated file names (default: ?? )
+    - moduleAware: (optional - struts1.1)
+    Specify if the Tiles definition factory is module aware. If true
+    (default), there will be one factory for each Struts module.
+    If false, there will be one common factory for all module. In this
+    later case, it is still needed to declare one plugin per module.
+    The factory will be initialized with parameters found in the first
+    initialized plugin (generally the one associated with the default
+    module).
+    true : One factory per module. (default)
+    false : one single shared factory for all modules
+    - definitions-parser-validate: (optional)
+    Specify if xml parser should validate the Tiles configuration file.
+    true : validate. DTD should be specified in file header (default)
+    false : no validation
+
+    Paths found in Tiles definitions are relative to the main context.
+    -->
+    <plug-in className="org.apache.struts.tiles.TilesPlugin" >
+        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />      
+        <set-property property="moduleAware" value="true" />
+    </plug-in>
+    
+    <!-- ========================= Validator plugin ================================= -->
+    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property
+            property="pathnames"
+            value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+    </plug-in>
+  
+</struts-config>

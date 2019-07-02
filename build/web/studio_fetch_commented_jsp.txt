@@ -1,0 +1,38 @@
+<!--</style>
+	<table border="1" cellspacing="0" cellpadding="0" class="hovertable" width=100%
+		align="center">
+		<%
+			if (studList != null) {
+		%>
+		<tr align="center">
+			<td>影厅id</td>
+			<td>影厅名称</td>
+			<td>影厅行数</td>
+			<td>影厅列数</td>
+			<td>影厅种类</td>
+			
+		</tr>
+		<%
+				for (int i = 0; i < studList.size(); i++) {
+		%>
+		<tr onmouseover="this.style.backgroundColor='#ffff66';"
+			onmouseout="this.style.backgroundColor='#d4e3e5';">
+			<td><%=studList.get(i).getID()%></td>
+			<td><%=studList.get(i).getName()%></td>
+			<td><%=studList.get(i).getRowCount()%></td>
+			<td><%=studList.get(i).getColCount()%></td>
+			<td><%=studList.get(i).getStype()%></td>
+			
+		</tr>
+		<%
+			}
+				if (studList.size() == 0) {
+		%>
+		<tr>
+			<th colspan="11">无影厅信息！</th>
+		</tr>
+		<%
+			}
+			}
+		%>
+	</table>-->
